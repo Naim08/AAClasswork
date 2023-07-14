@@ -10,15 +10,15 @@ class PolyTreeNode
     if !@parent.nil?
       @parent.children.delete(self)
     end
-    
+
     @parent = node
-    return self if node.nil? 
-    if !node.children.include?(self) 
+    return self if node.nil?
+    if !node.children.include?(self)
       node.children << self
     end
   end
 
-  def inspect 
+  def inspect
     "#{@value}"
   end
 
@@ -31,11 +31,17 @@ class PolyTreeNode
     node.parent = nil
   end
 
-  def dfs(value)
-    
+  def dfs(target)
+   return self if self.value == target
+
+  self.children.each do |child|
+    result = child.dfs(target)
+    return result if !result.nil?
+  end
+
+  nil
   end
 end
-
 # n1 = PolyTreeNode.new("root1")
 # n2 = PolyTreeNode.new("root2")
 # n3 = PolyTreeNode.new("root3")
