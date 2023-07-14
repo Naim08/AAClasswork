@@ -1,14 +1,39 @@
 class PolyTreeNode
-  attr_reader :children, :parent
-  def initialize(value)
+  attr_reader :children, :parent, :value
+  def initialize(value = "new_node", parent = nil)
     @parent = nil
     @children = []
     @value = value
   end
 
+  def parent=(node)
+    if !@parent.nil?
+      @parent.children.delete(self)
+    end
+    
+    @parent = node
+    return self if node.nil? 
+    if !node.children.include?(self) 
+      node.children << self
+    end
+  end
 
+  def inspect 
+    "#{@value}"
+  end
 
+  def add_child(node)
+    node.parent = self
+  end
 
+  def remove_child(node)
+    raise 'error' if !@children.include?(node)
+    node.parent = nil
+  end
+
+  def dfs(value)
+    
+  end
 end
 
 # n1 = PolyTreeNode.new("root1")
