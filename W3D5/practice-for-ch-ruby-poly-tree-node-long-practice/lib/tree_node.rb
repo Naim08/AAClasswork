@@ -1,3 +1,33 @@
+class MyQueue  
+  def initialize
+      @inner_array = []
+  end
+
+  def enqueue(el)
+      inner_array.push(el)
+      # inner_array.unshift(el)
+    #   show
+      self
+  end
+
+  def dequeue
+      inner_array.shift
+      # inner_array.pop
+  end
+
+  def show
+      inner_array.dup
+  end
+
+  def empty?
+      inner_array.empty?
+  end
+
+  private
+  attr_reader :inner_array
+end
+
+
 class PolyTreeNode
   attr_reader :children, :parent, :value
   def initialize(value = "new_node", parent = nil)
@@ -40,6 +70,21 @@ class PolyTreeNode
   end
 
   nil
+  end
+
+  def bfs(target)
+    queue = MyQueue.new
+    queue.enqueue(self)
+    while !queue.empty?
+      removed_node = queue.dequeue
+      if removed_node.value == target 
+        return removed_node
+      else
+        removed_node.children.each do |child|
+          queue.enqueue(child)
+        end
+      end
+    end
   end
 end
 # n1 = PolyTreeNode.new("root1")
