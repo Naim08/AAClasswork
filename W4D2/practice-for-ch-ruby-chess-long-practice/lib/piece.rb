@@ -1,3 +1,16 @@
+require_relative "bishop.rb"
+require_relative "board.rb"
+require_relative "king.rb"
+require_relative "knight.rb"
+require_relative "null_piece.rb"
+require_relative "pawn.rb"
+require_relative "piece.rb"
+require_relative "queen.rb"
+require_relative "rook.rb"
+require_relative "rook.rb"
+require_relative "slidable.rb"
+require_relative "stepable.rb"
+
 class Piece
   attr_reader :color, :board
   attr_accessor :pos
@@ -15,7 +28,7 @@ class Piece
   end
 
   def empty?
-    false
+    board[pos].is_a?(NullPiece)
   end
 
   def valid_moves

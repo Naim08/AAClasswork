@@ -5,6 +5,7 @@ module Slideable
   def diagonal_dirs
     DIAGONAL_DIRS
   end
+
   def horizontal_dirs
     HORIZONTAL_DIRS
   end
@@ -33,7 +34,7 @@ module Slideable
 
       break unless board.valid_pos?(new_pos)
 
-      if board[new_pos].empty?
+      if board[new_pos].is_a?(NullPiece) 
         moves << new_pos
       else
         moves << new_pos if board[new_pos].color != color
