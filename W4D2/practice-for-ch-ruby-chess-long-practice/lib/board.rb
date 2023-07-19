@@ -1,5 +1,4 @@
-require "./"
-require_relative "piece.rb"
+require_relative "piece"
 
 class Board
   attr_reader :grid
@@ -10,13 +9,26 @@ class Board
 
   end
 
-  def move_piece(start_pos, end_pos)
-    raise "No piece at start position" if self[start_pos].nil?
-    raise "Piece cannot move to end position" unless self[start_pos].valid_moves.include?(end_pos)
 
+  def move_piece(color, start_pos, end_pos)
     piece = self[start_pos]
-    self[start_pos] = nil
+    raise "No piece at start position" if piece.empty?
+    raise "Piece does not belong to #{color} player" if piece.color != color
+    raise "Piece cannot move to end position" unless piece.valid_moves.include?(end_pos)
+
     self[end_pos] = piece
+    self[start_pos] = nil
+    piece.pos = end_pos
+  end
+
+  def move_piece!(start_pos, end_pos)
+    piece = self[start_pos]
+    raise "No piece at start position" if piece.empty?
+    raise "Piece does not belong to #{color} player" if piece.color != color
+
+
+    self[end_pos] = piece
+    self[start_pos] = nil
     piece.pos = end_pos
   end
 
@@ -29,8 +41,36 @@ class Board
     row, col = pos
     @grid[row][col] = piece
   end
-  def valid_pos?(pos)
-    pos.all? { |coord| coord.between?(0, 7) }
+
+  def find_king(color)
+    self.grid.flatten.find do |el|
+      el.is_a?(King) && el.color == color
+    end
+  end
+
+  def in_check?(color)
+    king_pos = find_king(color).pos
+    self.grid.flatten.each do |piece|
+      return true if piece.color != color && piece.moves.include?(king_pos)
+    end
+    false
+  end
+
+  # def checkmate?(color)
+  #   return false unless in_check?(color)
+
+  #   pieces = self.grid.flatten.select { |piece| piece && piece.color == color }
+  #   pieces.all? { |piece| piece.valid_moves.empty? }
+  # end
+
+  def dup
+    dup_board = Board.new
+    self.grid.each_with_index do |row, i|
+      row.each_with_index do |col, j|
+        dup_board.add_piece(self[[i, j]].dup, [i, j]) if self[[i, j]]
+      end
+    end
+    dup_board
   end
 
   def add_piece(piece, pos)
@@ -58,10 +98,4 @@ class Board
       piece_class.new(:white, self, [7, col])
     end
   end
-
 end
-
-b = Board.new
-
-
-

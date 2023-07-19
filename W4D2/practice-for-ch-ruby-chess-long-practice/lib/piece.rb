@@ -8,8 +8,6 @@ require_relative "piece.rb"
 require_relative "queen.rb"
 require_relative "rook.rb"
 require_relative "rook.rb"
-require_relative "slidable.rb"
-require_relative "stepable.rb"
 
 class Piece
   attr_reader :color, :board
@@ -30,14 +28,28 @@ class Piece
   def empty?
     board[pos].is_a?(NullPiece)
   end
+  def pos=(value)
+    @pos = value
+  end
+  def moves
+    # implemented by subclasses
+    []
+  end
 
   def valid_moves
     moves.reject { |end_pos| move_into_check?(end_pos) }
   end
 
+  def symbol
+    # implemented by subclasses
+    ""
+  end
+
+  private
+
   def move_into_check?(end_pos)
-    test_board = board.dup
-    test_board.move_piece!(pos, end_pos)
-    test_board.in_check?(color)
+    duped_board = board.dup
+    duped_board.move_piece!(pos, end_pos)
+    duped_board.in_check?(color)
   end
 end
