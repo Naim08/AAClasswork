@@ -1,7 +1,7 @@
 require "io/console"
 
 KEYMAP = {
-  " " => :space,
+  " " => :b,
   "h" => :left,
   "j" => :down,
   "k" => :up,
@@ -32,15 +32,19 @@ MOVES = {
 
 class Cursor
 
-  attr_reader :cursor_pos, :board
+  attr_reader :cursor_pos, :board, :toggle_selected
 
   def initialize(cursor_pos, board)
     @cursor_pos = cursor_pos
     @board = board
   end
 
+  def toggle_selected
+    @selected = !@selected
+  end
   def get_input
     key = KEYMAP[read_char]
+
     handle_key(key)
   end
 
@@ -76,8 +80,21 @@ class Cursor
   end
 
   def handle_key(key)
+    case key
+    when :return, :space
+      toggle_selected
+      return @cursor_pos
+    when :left, :right, :up, :down
+      update_pos(KEYMAP[key])
+      return nil
+    when :ctrl_c
+      Process.exit(0)
+    end
   end
 
+
   def update_pos(diff)
+    new_pos = [@cursor_pos[0] + diff[0], @cursor_pos[1] + diff[1]]
+    @cursor_pos = new_pos if @board.valid_pos?(new_pos)
   end
 end

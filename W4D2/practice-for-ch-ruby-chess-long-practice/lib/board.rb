@@ -11,7 +11,7 @@ require_relative "queen.rb"
 class Board
   attr_reader :grid
   def initialize
-    @grid = Array.new(8) {Array.new(8)}
+    @grid = Array.new(8) {Array.new(8, NullPiece.instance)}
 
     populate_board
 
@@ -28,7 +28,7 @@ class Board
     piece.pos = end_pos
   end
 
-  def move_piece!(start_pos, end_pos)
+  def move_piece!(color, start_pos, end_pos)
     piece = self[start_pos]
     raise "No piece at start position" if piece.empty?
     raise "Piece does not belong to #{color} player" if piece.color != color
@@ -37,6 +37,10 @@ class Board
     self[end_pos] = piece
     self[start_pos] = nil
     piece.pos = end_pos
+  end
+
+  def valid_pos?(pos)
+    pos.all? { |coord| coord.between?(0, 7) }
   end
 
   def [](pos)
