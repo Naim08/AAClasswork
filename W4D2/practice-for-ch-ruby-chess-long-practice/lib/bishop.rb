@@ -1,7 +1,12 @@
-require_relative 'slideable'
+require_relative 'slideable.rb'
+require_relative "piece.rb"
 
 class Bishop < Piece
   include Slideable
+
+  def initialize(color, board, pos)
+    super
+  end 
 
   def symbol
     color == :white ? '♗' : '♝'

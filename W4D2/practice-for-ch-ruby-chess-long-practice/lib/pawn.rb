@@ -1,3 +1,5 @@
+require_relative "piece"
+
 class Pawn < Pieces
  def symbol
    "♙"
