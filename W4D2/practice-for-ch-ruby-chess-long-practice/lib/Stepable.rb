@@ -7,12 +7,19 @@ module Stepable
 
       next unless board.valid_pos?(new_pos)
 
-      if board[new_pos].empty?
+      if board[new_pos].is_a?(NullPiece)
         moves << new_pos
       elsif board[new_pos].color != color
         moves << new_pos
       end
     end
     moves
+  end
+
+  private
+
+  def move_diffs
+    # implemented by subclass
+    raise NotImplementedError
   end
 end

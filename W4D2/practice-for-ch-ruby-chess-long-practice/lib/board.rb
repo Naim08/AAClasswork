@@ -13,10 +13,12 @@ class Board
     raise "No piece at start position" if self[start_pos].nil?
     raise "Piece cannot move to end position" unless self[start_pos].valid_moves.include?(end_pos)
 
-    self[end_pos] = self[start_pos]
+    piece = self[start_pos]
     self[start_pos] = nil
-    self[end_pos].pos = end_pos
+    self[end_pos] = piece
+    piece.pos = end_pos
   end
+
   def [](pos)
     row, col = pos
     @grid[row][col]
@@ -26,7 +28,13 @@ class Board
     row, col = pos
     @grid[row][col] = piece
   end
+  def valid_pos?(pos)
+    pos.all? { |coord| coord.between?(0, 7) }
+  end
 
+  def add_piece(piece, pos)
+    self[pos] = piece
+  end
 
   private
 
@@ -53,3 +61,6 @@ class Board
 end
 
 b = Board.new
+
+
+
