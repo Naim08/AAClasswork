@@ -1,4 +1,5 @@
 require "./"
+require_relative "piece.rb"
 
 class Board
   attr_reader :grid
