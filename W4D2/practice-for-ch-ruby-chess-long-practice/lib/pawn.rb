@@ -1,6 +1,11 @@
 require_relative "piece"
 
-class Pawn < Pieces
+class Pawn < Piece
+
+  def initialize(color, board, pos)
+    super
+  end 
+
  def symbol
    "♙"
  end

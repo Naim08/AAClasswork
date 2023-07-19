@@ -1,4 +1,12 @@
 require_relative "piece.rb"
+require_relative "rook.rb"
+require_relative "bishop.rb"
+require_relative "king.rb"
+require_relative "knight.rb"
+require_relative "null_piece.rb"
+require_relative "pawn.rb"
+require_relative "queen.rb"
+
 
 class Board
   attr_reader :grid
@@ -8,7 +16,6 @@ class Board
     populate_board
 
   end
-
 
   def move_piece(color, start_pos, end_pos)
     piece = self[start_pos]
