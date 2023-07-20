@@ -6,12 +6,15 @@ require_relative "knight.rb"
 require_relative "null_piece.rb"
 require_relative "pawn.rb"
 require_relative "queen.rb"
+require_relative "slideable.rb"
+require_relative "stepable.rb"
 
 
 class Board
   attr_reader :grid
   def initialize
-    @grid = Array.new(8) {Array.new(8, NullPiece.instance)}
+    @null_piece = NullPiece.instance
+    @grid = Array.new(8) {Array.new(8, @null_piece)}
 
     populate_board
 
@@ -23,19 +26,16 @@ class Board
     raise "Piece does not belong to #{color} player" if piece.color != color
     raise "Piece cannot move to end position" unless piece.valid_moves.include?(end_pos)
 
-    self[end_pos] = piece
-    self[start_pos] = nil
-    piece.pos = end_pos
+    move_piece!(start_pos, end_pos)
   end
 
-  def move_piece!(color, start_pos, end_pos)
+  def move_piece!(start_pos, end_pos)
     piece = self[start_pos]
     raise "No piece at start position" if piece.empty?
-    raise "Piece does not belong to #{color} player" if piece.color != color
 
 
     self[end_pos] = piece
-    self[start_pos] = nil
+    self[start_pos] = @null_piece
     piece.pos = end_pos
   end
 
@@ -54,7 +54,7 @@ class Board
   end
 
   def find_king(color)
-    self.grid.flatten.find do |el|
+    pieces.flatten.find do |el|
       el.is_a?(King) && el.color == color
     end
   end
@@ -67,12 +67,12 @@ class Board
     false
   end
 
-  # def checkmate?(color)
-  #   return false unless in_check?(color)
+  def checkmate?(color)
+    return false unless in_check?(color)
 
-  #   pieces = self.grid.flatten.select { |piece| piece && piece.color == color }
-  #   pieces.all? { |piece| piece.valid_moves.empty? }
-  # end
+    pieces = self.grid.flatten.select { |piece| piece && piece.color == color }
+    pieces.all? { |piece| piece.valid_moves.empty? }
+  end
 
   def dup
     dup_board = Board.new
@@ -86,6 +86,10 @@ class Board
 
   def add_piece(piece, pos)
     self[pos] = piece
+  end
+
+  def pieces
+    @grid.flatten.reject(&:empty?)
   end
 
   private

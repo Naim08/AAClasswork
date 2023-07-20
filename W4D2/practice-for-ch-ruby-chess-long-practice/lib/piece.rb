@@ -16,11 +16,12 @@ class Piece
   end
 
   def empty?
-    board[pos].is_a?(NullPiece)
+    self.is_a?(NullPiece)
   end
   def pos=(value)
     @pos = value
   end
+
   def moves
     # implemented by subclasses
     []

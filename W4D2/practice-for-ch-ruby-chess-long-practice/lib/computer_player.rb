@@ -1,3 +1,5 @@
 require_relative "player.rb"
-class ComputerPlayer
-end 
+require_relative 'display'
+class ComputerPlayer < Player
+
+end

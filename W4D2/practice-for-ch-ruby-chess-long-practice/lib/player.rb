@@ -1,14 +1,12 @@
-require_relative "display.rb"
-
-class Player 
+class Player
 
     def initialize(color, display)
-    @color = color 
-    @display = display 
-    end 
+    @color = color
+    @display = display
+    end
 
     def make_move
        raise NotImplementedError
-    end 
+    end
 
-end 
+end
