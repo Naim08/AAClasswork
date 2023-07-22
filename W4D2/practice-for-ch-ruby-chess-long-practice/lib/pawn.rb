@@ -1,5 +1,5 @@
 require_relative "piece"
-require "byebug"
+
 class Pawn < Piece
 
   def initialize(color, board, pos)

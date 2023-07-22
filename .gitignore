@@ -2,6 +2,7 @@
 .vscode
 *.gem
 *.rbc
+.ruby-lsp
 /.config
 /coverage/
 /InstalledFiles
