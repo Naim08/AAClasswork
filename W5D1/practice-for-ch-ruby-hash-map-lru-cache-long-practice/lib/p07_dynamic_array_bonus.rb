@@ -33,6 +33,8 @@ class DynamicArray
   def initialize(capacity = 8)
     @store = StaticArray.new(capacity)
     @count = 0
+    @start = 0
+    @end = capacity
   end
 
   def [](i)
@@ -41,7 +43,11 @@ class DynamicArray
       return @store[@count + i]
     end
     return nil if i >= @count
-    @store[i]
+    if @start != @count
+      @store[(@start + i) % @count]
+    else
+      @store[i]
+    end
   end
 
   def []=(i, val)
@@ -78,11 +84,9 @@ class DynamicArray
     if capacity == @count
       resize!
     end
+    @start = (@start - 1) % capacity
+    @store[@start] = val
     @count += 1
-    (@count - 1).downto(1) do |i|
-      @store[i] = @store[i - 1]
-    end
-    @store[0] = val
 
   end
 
@@ -144,5 +148,61 @@ class DynamicArray
       new_store[i] = el
     end
     @store = new_store
+  end
+end
+
+
+class RingBuffer
+  def initialize(size)
+    @size = size
+    @buffer = Array.new(size)
+    @start = 0
+    @count = 0
+  end
+  def shift
+    return nil if @count == 0
+    val = @buffer[@start]
+    @buffer[@start] = nil
+    @start = (@start + 1) % @size
+    @count -= 1
+    val
+  end
+  def unshift(val)
+    if @count == @size
+      @buffer[@start] = val
+      @start = (@start + 1) % @size
+    else
+      @start = (@start - 1) % @size
+      @buffer[@start] = val
+      @count += 1
+    end
+  end
+  def push(val)
+    if @count == @size
+      @buffer[@start] = val
+      @start = (@start + 1) % @size
+    else
+      @buffer[(@start + @count) % @size] = val
+      @count += 1
+    end
+  end
+
+  def pop
+    return nil if @count == 0
+    val = @buffer[(@start + @count - 1) % @size]
+    @buffer[(@start + @count - 1) % @size] = nil
+    @count -= 1
+    val
+  end
+  def [](key)
+    return nil if key >= @count
+    @buffer[(@start + key) % @size]
+  end
+  def to_a
+    result = []
+    @count.times do |i|
+      result << @buffer[(@start + i) % @size]
+    end
+    result
   end
 end
