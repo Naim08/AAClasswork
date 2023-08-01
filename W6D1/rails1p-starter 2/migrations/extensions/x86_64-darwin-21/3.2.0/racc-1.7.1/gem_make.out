@@ -1,0 +1,21 @@
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/racc-1.7.1/ext/racc/cparse
+/usr/local/opt/ruby/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-60851-utgvc sitelibdir\=./.gem.20230731-60851-utgvc clean
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-60851-utgvc sitelibdir\=./.gem.20230731-60851-utgvc
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-60851-utgvc sitelibdir\=./.gem.20230731-60851-utgvc install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230731-60851-utgvc/racc
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-60851-utgvc sitelibdir\=./.gem.20230731-60851-utgvc clean

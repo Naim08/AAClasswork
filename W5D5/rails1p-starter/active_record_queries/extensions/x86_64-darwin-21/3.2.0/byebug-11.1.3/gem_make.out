@@ -1,0 +1,23 @@
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/byebug-11.1.3/ext/byebug
+/usr/local/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-l63oof sitelibdir\=./.gem.20230731-73878-l63oof clean
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-l63oof sitelibdir\=./.gem.20230731-73878-l63oof
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-l63oof sitelibdir\=./.gem.20230731-73878-l63oof install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20230731-73878-l63oof/byebug
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-l63oof sitelibdir\=./.gem.20230731-73878-l63oof clean

@@ -1,0 +1,20 @@
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/strscan-3.0.3/ext/strscan
+/usr/local/opt/ruby/bin/ruby extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-o2f7sw sitelibdir\=./.gem.20230731-47990-o2f7sw clean
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-o2f7sw sitelibdir\=./.gem.20230731-47990-o2f7sw
+compiling strscan.c
+linking shared-object strscan.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-o2f7sw sitelibdir\=./.gem.20230731-47990-o2f7sw install
+/usr/bin/install -c -m 0755 strscan.bundle ./.gem.20230731-47990-o2f7sw
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/strscan-3.0.3/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-o2f7sw sitelibdir\=./.gem.20230731-47990-o2f7sw clean

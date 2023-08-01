@@ -1,0 +1,21 @@
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/racc-1.7.1/ext/racc/cparse
+/usr/local/opt/ruby/bin/ruby extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-ndwa7t sitelibdir\=./.gem.20230731-73878-ndwa7t clean
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-ndwa7t sitelibdir\=./.gem.20230731-73878-ndwa7t
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-ndwa7t sitelibdir\=./.gem.20230731-73878-ndwa7t install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230731-73878-ndwa7t/racc
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/racc-1.7.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-ndwa7t sitelibdir\=./.gem.20230731-73878-ndwa7t clean

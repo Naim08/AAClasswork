@@ -1,0 +1,19 @@
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/websocket-driver-0.7.5/ext/websocket-driver
+/usr/local/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-tebffk sitelibdir\=./.gem.20230731-47990-tebffk clean
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-tebffk sitelibdir\=./.gem.20230731-47990-tebffk
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-tebffk sitelibdir\=./.gem.20230731-47990-tebffk install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20230731-47990-tebffk
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W6D1/rails1p-starter 2/migrations/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-47990-tebffk sitelibdir\=./.gem.20230731-47990-tebffk clean

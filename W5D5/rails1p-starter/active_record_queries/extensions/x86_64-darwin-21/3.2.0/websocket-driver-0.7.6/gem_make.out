@@ -1,0 +1,19 @@
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/websocket-driver-0.7.6/ext/websocket-driver
+/usr/local/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-s6a18s sitelibdir\=./.gem.20230731-73878-s6a18s clean
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-s6a18s sitelibdir\=./.gem.20230731-73878-s6a18s
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-s6a18s sitelibdir\=./.gem.20230731-73878-s6a18s install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20230731-73878-s6a18s
+
+current directory: /Users/mdmiah/Desktop/AAClasswork/W5D5/rails1p-starter/active_record_queries/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20230731-73878-s6a18s sitelibdir\=./.gem.20230731-73878-s6a18s clean
