@@ -1,0 +1,21 @@
+{
+  "name": "vs-theme",
+  "displayName": "VS Theme",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "VS Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/VS Theme-color-theme.json"
+      }
+    ]
+  }
+}
