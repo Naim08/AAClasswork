@@ -1,0 +1,14 @@
+<form action="<%= users_url %>" method="post">
+<% flash.each do |key, value| %>
+<% value.each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+/<% end %>
+    <%= auth_token %>
+    <label for="email">Email</label>
+    <input type="text" name="user[email]" id="email">
+    <label for="password">Password</label>
+    <input type="password" name="user[password]" id="user_password">
+    <input type="submit" value="Create Account">
+</form>
+

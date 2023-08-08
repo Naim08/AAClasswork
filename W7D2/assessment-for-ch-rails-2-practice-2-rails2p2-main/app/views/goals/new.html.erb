@@ -1,0 +1,22 @@
+<h1>Add a New Goal for <%= current_user.username %></h1>
+
+<form action="<%= goals_url %>" method="POST">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>" />
+  <label>Name:
+    <input name="goal[name]" value="<%= @goal.name %>" />
+  </label>
+  <label>Details:
+    <input name="goal[details]" value="<%= @goal.details %>" />
+  </label>
+  <p>Completed?</p>
+  <label>True
+    <input type="radio" name="goal[status]" value="true" <%= @goal.status == true ? "checked" : "" %> />
+  </label>
+  <label>False
+    <input type="radio" name="goal[status]" value="false" <%= @goal.status == false ? "checked" : "" %> />
+  </label>
+  <button type="submit">Create Goal</button>
+</form>

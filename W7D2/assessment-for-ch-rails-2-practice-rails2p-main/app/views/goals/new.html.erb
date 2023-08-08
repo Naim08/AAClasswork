@@ -1,0 +1,23 @@
+<p>Add Goal </p>
+<form action="<%= user_goals_url %>" method="post">
+ <%= auth_token %>
+    <label for="name">Name:
+        <input type="text" id="name" name="goal[name]" value="">
+    </label>
+    <br/>
+    <label for="details">Description:
+        <input type="text" id="details" name="goal[details]" value="">
+    </label>
+    <br/>
+    <label for="status">status:
+        <input type="text" id="status" name="goal[status]" value="">
+    </label>
+    <br/>
+    <label for="user_id">User: <%= current_user.username %>
+    <input type="text" id="user_id" name="goal[user_id]" value=" <%= current_user.id %>">
+    </label>
+    <br/>
+    <input type="submit" value="Add Goal">
+
+</form>
+
