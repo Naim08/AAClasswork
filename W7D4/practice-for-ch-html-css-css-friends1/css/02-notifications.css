@@ -1,0 +1,35 @@
+/* PHASE 2: Notifications */
+/* Notifications */
+/* Notifications */
+
+.notifications-count {
+  position: absolute;
+  background-color: black;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+}
+
+.notifications {
+  display: none;
+  position: absolute;
+  background-color: red;
+  color: #fff;
+}
+
+.notifications-count:hover {
+  display: block;
+}
+
+.header-nav-right li a:hover + .notifications {
+  display: block;
+}
+.notifications:hover {
+  display: block;
+}
+
+.header-nav-right li a:hover + .notifications-count {
+  display: none;
+}

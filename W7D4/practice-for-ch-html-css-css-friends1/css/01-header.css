@@ -1,0 +1,64 @@
+/* PHASE 1: Header and Nav CSS */
+
+/* Header */
+header {
+  background-color: red;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li a {
+  background-color: red;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  color: #ccc;
+}
+
+/* Header Nav Right */
+
+.header-nav-right {
+  display: flex;
+}
+
+.header-nav-right li {
+  margin-left: 1rem;
+}
+
+.header-nav-right li a {
+  background-color: red;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.header-nav-right li a:hover {
+  color: #ccc;
+}
