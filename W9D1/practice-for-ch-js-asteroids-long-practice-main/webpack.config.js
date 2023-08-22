@@ -29,8 +29,8 @@ const config = {
         loader: "babel-loader",
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|jpeg)$/i,
+        type: "asset/resource",
       },
 
       // Add your rules for custom modules here

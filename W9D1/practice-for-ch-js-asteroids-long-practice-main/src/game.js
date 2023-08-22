@@ -6,11 +6,12 @@ import Ship from "./ship";
 import Asteroid from "./asteroid";
 import Bullet from "./bullet";
 import MovingObject from "./moving_object";
+import BackGroundImage from "./space_backround.jpg";
 
 class Game {
-  static DIM_X = 500;
-  static DIM_Y = 500;
-  static NUM_ASTEROIDS = 4;
+  static DIM_X = 1000;
+  static DIM_Y = 700;
+  static NUM_ASTEROIDS = 10;
   static BG_COLOR = "#000000";
 
   static wrap(coord, max) {
@@ -49,10 +50,13 @@ class Game {
     return [Math.random() * Game.DIM_X, Math.random() * Game.DIM_Y];
   }
   draw(ctx) {
+    // this.drawBackgroundImage(ctx);
     ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
     ctx.fillStyle = Game.BG_COLOR;
     ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
+
     this.allObjects().forEach((obj) => obj.draw(ctx));
+    //this.drawBackgroundImage(ctx);
   }
 
   moveObjects() {
@@ -124,6 +128,21 @@ class Game {
     return (
       pos[0] < 0 || pos[1] < 0 || pos[0] > Game.DIM_X || pos[1] > Game.DIM_Y
     );
+  }
+
+  gameOver() {
+    return this.asteroids.length === 0;
+  }
+  drawBackgroundImage(ctx) {
+    const img = new Image();
+    img.src = BackGroundImage;
+    img.onload = function () {
+      ctx.drawImage(img, 0, 0, Game.DIM_X, Game.DIM_Y);
+    };
+    return img.onload();
+
+    // ctx.drawImage(
+    //   img,
   }
 }
 
