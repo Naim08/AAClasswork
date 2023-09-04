@@ -1,0 +1,29 @@
+input.invalid {
+  border: 2px solid red;
+  color: red;
+  background-color: pink;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px red;
+  transition: all 0.5s ease-in-out;
+}
+
+input.valid {
+  border: 2px solid green;
+  color: green;
+  background-color: lightgreen;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px green;
+  transition: all 0.5s ease-in-out;
+}
