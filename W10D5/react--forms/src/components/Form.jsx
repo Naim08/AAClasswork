@@ -5,6 +5,9 @@ function Form() {
     name: "",
     email: "",
     message: "",
+    phone: "",
+    phoneType: "",
+    bio: "",
   });
 
   const handleChange = (event) => {
@@ -21,6 +24,9 @@ function Form() {
       name: "",
       email: "",
       message: "",
+      phone: "",
+      phoneType: "",
+      bio: "",
     });
   };
 
@@ -43,6 +49,35 @@ function Form() {
           value={formData.email}
           onChange={handleChange}
         />
+      </label>
+      <label>
+        Phone:
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Phone Type:
+        <select
+          name="phoneType"
+          value={formData.phoneType}
+          onChange={handleChange}
+        >
+          <option value="home">Home</option>
+          <option value="cell">Cell</option>
+          <option value="work">Work</option>
+        </select>
+      </label>
+      <label>
+        Bio:
+        <textarea
+          name="bio"
+          value={formData.bio}
+          onChange={handleChange}
+        ></textarea>
       </label>
       <label>
         Message:
