@@ -1,11 +1,11 @@
-function Message({ size }) {
-  console.log('Message', size);
+import React, { useEffect } from "react";
 
-  return (
-    <div className="message medium">
-      (Oh my! Your bird is naked!)
-    </div>
-  );
-};
+function Message({ size }) {
+  useEffect(() => {
+    console.log("Message useEffect", size);
+  }, [size]);
+
+  return <div className="message medium">(Oh my! Your bird is naked!)</div>;
+}
 
 export default Message;
